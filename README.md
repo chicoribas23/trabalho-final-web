@@ -1,5 +1,7 @@
-# Nome_da_Equipe
+# Chiclete de Banana
 
 ### Integrantes
-[comment]: <> (Coloque aqui o nome completo, em ordem alfabética, 
-e o link para o GitHub, de cada um dos colaboradores do projeto)
+[comment]: <> (Eduardo Elias Teixeira Oliveira;Francisco Ribas Rodrigues;Kaiky Gomes Leal;
+https://github.com/chicoribas23
+https://github.com/kaikygomes86767
+https://github.com/Gilzilene20)
