@@ -42,15 +42,19 @@ Consumidores frequentes do hipermercado, especialmente famílias e indivíduos q
 
 ---
 
-Proposta 03
+## Proposta - 03
 
-## Título_da_proposta
-Loja de make
+### Título da Proposta
+Criação de uma Loja de Cosméticos
+
 ### Descrição
-Loja, com uma diversidade enorme de produtos.
-### Problema a ser solucionado
-Criar uma nova loja para atender as necessidades do povo.
-### Público alvo
-Pessoas em geral
+A proposta consiste na criação de uma loja de cosméticos que oferecerá uma ampla variedade de produtos para atender às necessidades e preferências dos clientes. A loja será um espaço dedicado à beleza e ao bem-estar, disponibilizando itens de maquiagem, cuidados com a pele, cabelos e fragrâncias.
+
+### Problema a Ser Solucionado
+A necessidade identificada é a falta de uma loja especializada que ofereça uma diversidade significativa de produtos de beleza, facilitando o acesso dos consumidores a itens de qualidade. A nova loja pretende suprir essa demanda, proporcionando conveniência e variedade.
+
+### Público-Alvo
+O público-alvo abrange pessoas de diversas faixas etárias e estilos, incluindo amantes da maquiagem, profissionais da área de beleza e consumidores em busca de produtos para cuidados pessoais.
+
 ### Funcionalidades
-Funciona como um mercado de compra e venda. Como se fosse a Shopee, em que você compra e recebe o seu produto.
+A loja funcionará como um marketplace digital, similar à Shopee, permitindo que os clientes realizem compras online com facilidade. Os usuários poderão navegar por categorias de produtos, adicionar itens ao carrinho, efetuar pagamentos seguros e receber os produtos diretamente em suas residências. Além disso, serão implementadas funcionalidades como avaliações de produtos, promoções especiais e um programa de fidelidade para incentivar a recompra.
