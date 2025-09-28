@@ -1,6 +1,6 @@
-/* ================== */
-/* RESET E SITE PÚBLICO */
-/* ================== */
+
+/* SITE  */
+
 * {
     margin: 0;
     padding: 0;
@@ -109,7 +109,7 @@ header nav ul li a:hover {
     color: #333;
 }
 
-/* ===== FOOTER SITE ===== */
+/* ===== Foto SITE ===== */
 footer {
     display: flex;
     justify-content: space-between;
@@ -136,6 +136,7 @@ footer .qr img {
 /* ========================= */
 /* ESTILOS PARA ÁREA ADMIN */
 /* ========================= */
+
 .admin-header {
     background-color: #a50000;
     padding: 10px 40px;
