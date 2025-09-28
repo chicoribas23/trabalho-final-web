@@ -267,26 +267,3 @@ footer .qr img {
     text-align: center;
     padding: 0;
 }
-.equipamentos {
-    display: flex;
-    flex-direction: column; /* empilha verticalmente */
-    align-items: center;    /* centraliza horizontalmente */
-    gap: 30px;              /* espaço entre os equipamentos */
-}
-
-.equipamento {
-    text-align: center;     /* centraliza texto abaixo da imagem */
-}
-
-.equipamento img {
-    max-width: 100%;
-    height: auto;
-    display: block;
-    margin: 0 auto;         /* garante centralização da imagem */
-}
-
-.equipamento p {
-    margin-top: 10px;
-    font-size: 16px;
-    color: #333;
-}
