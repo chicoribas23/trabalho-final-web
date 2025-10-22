@@ -29,4 +29,9 @@ Design Moderno e Responsivo: desenvolvido no Figma, com foco em navegação simp
 Link de Compartilhamento no Figma
 https://www.figma.com/design/VBJHM0koKA7apyS9idgbZJ/Trabalho-de-web?node-id=0-1&t=WTGIb6964dXZoxLh-1
 
-BD: LINKModelo Conceitual :
+BD: 
+### Explicação
+- Usuário – Representa o administrador do sistema.  
+- Plano– Armazena os planos disponíveis na academia.  
+- Foto – Contém as imagens publicadas no site.  
+- Relacionamentos: um usuário pode cadastrar várias fotos e planos.
