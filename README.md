@@ -35,3 +35,4 @@ BD:
 - Plano– Armazena os planos disponíveis na academia.  
 - Foto – Contém as imagens publicadas no site.  
 - Relacionamentos: um usuário pode cadastrar várias fotos e planos.
+link do bd funcionado no neon:https://console.neon.tech/app/projects/damp-resonance-90170880/branches/br-quiet-frost-acvpqned/sql-editor?database=neondb&query=create+vikings+gym+database+with+users+plans+and+photos
