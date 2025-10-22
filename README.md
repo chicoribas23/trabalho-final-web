@@ -30,9 +30,14 @@ Link de Compartilhamento no Figma
 https://www.figma.com/design/VBJHM0koKA7apyS9idgbZJ/Trabalho-de-web?node-id=0-1&t=WTGIb6964dXZoxLh-1
 
 BD: 
+
 ### Explicação
 - Usuário – Representa o administrador do sistema.  
 - Plano– Armazena os planos disponíveis na academia.  
 - Foto – Contém as imagens publicadas no site.  
 - Relacionamentos: um usuário pode cadastrar várias fotos e planos.
+
 link do bd funcionado no neon:https://console.neon.tech/app/projects/damp-resonance-90170880/branches/br-quiet-frost-acvpqned/sql-editor?database=neondb&query=create+vikings+gym+database+with+users+plans+and+photos
+
+links das imagens do bd conceitual e logico: https://drive.google.com/drive/folders/1Kgb4_UTCoLTZuoDnB1pc_VXpZF5dHs0q?usp=drive_link
+obs:Arthur eu tentei de todas as meneiras  exporta o link das imagens do br modelo mas sor tinha como exporta png e pdf,desse modo eu crie uma pasta no drive e coloquei as duas imagens...
