@@ -5,6 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Painel Admin - Planos</title>
     <link rel="stylesheet" href="../css/style.css">
+    
+     <script>
+    // Se o usuário NÃO ESTIVER logado...
+    if (sessionStorage.getItem('isLoggedIn') !== 'true') {
+        alert('Acesso negado. Faça o login primeiro.');
+        // ...manda ele de volta para a página de login
+        window.location.href = 'index.html'; // (ou o nome da sua pág de login)
+    }
+</script>
 </head>
 <body>
     <header class="admin-header">
