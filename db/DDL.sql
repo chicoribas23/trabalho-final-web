@@ -10,8 +10,9 @@ CREATE TABLE IF NOT EXISTS planos (
     id_plano SERIAL PRIMARY KEY,
     nome VARCHAR(100) NOT NULL,
     descricao TEXT,
+    caminho_arquivo_foto VARCHAR(255),
     preco NUMERIC(10,2),
-    id_usuario INT REFERENCES usuarios(id_usuario)
+    
 );
 
 -- Criar tabela de fotos
@@ -20,5 +21,5 @@ CREATE TABLE IF NOT EXISTS fotos (
     titulo VARCHAR(100),
     caminho_arquivo VARCHAR(255),
     data_upload DATE DEFAULT CURRENT_DATE,
-    id_usuario INT REFERENCES usuarios(id_usuario)
+   
 );
