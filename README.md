@@ -29,7 +29,7 @@ Design Moderno e Responsivo: desenvolvido no Figma, com foco em navegação simp
 Link de Compartilhamento no Figma
 https://www.figma.com/design/VBJHM0koKA7apyS9idgbZJ/Trabalho-de-web?node-id=0-1&t=WTGIb6964dXZoxLh-1
 
-BD modelo conceitual: 
+BD modelo conceitual:...
 
 ### Explicação
 - Usuário – Representa o administrador do sistema.  
