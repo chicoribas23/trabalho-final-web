@@ -8,7 +8,7 @@ https://github.com/Gilzilene20
 https://github.com/Lipekau)
 ##- Título
 
-Academia Vikings – Transformando Vidas com Saúde e Movimento
+Academia Vikings – Transformando Vidas com Saúde e Movimento v
 
 Descrição
 
