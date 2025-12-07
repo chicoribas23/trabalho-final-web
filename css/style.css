@@ -1,5 +1,6 @@
 /* SITE  */
 
+
 * {
     margin: 0;
     padding: 0;
@@ -7,10 +8,12 @@
     font-family: Arial, Helvetica, sans-serif;
 }
 
+
 /* Adiciona scroll suave para âncoras internas (navegação) */
 html {
     scroll-behavior: smooth;
 }
+
 
 /* ===== HEADER SITE ===== */
 header {
@@ -21,15 +24,18 @@ header {
     padding: 10px 40px;
 }
 
+
 header .logo img {
     height: 70px;
 }
+
 
 header nav ul {
     list-style: none;
     display: flex;
     gap: 40px;
 }
+
 
 header nav ul li a {
     color: white;
@@ -39,9 +45,11 @@ header nav ul li a {
     transition: 0.3s;
 }
 
+
 header nav ul li a:hover {
     color: #ffcc00; /* Destaque no hover */
 }
+
 
 /* ===== SLOGAN SITE (Seção Principal da Home) ===== */
 .slogan {
@@ -49,17 +57,20 @@ header nav ul li a:hover {
     margin: 40px 0;
 }
 
+
 .slogan h1 {
     font-size: 60px;
     font-family: "Arial",cursive;
     color: #444;
 }
 
+
 .slogan p {
     font-size: 22px;
     font-style: italic;
     color: #333;
 }
+
 
 /* ===== CARDS SITE (Layout de 4 colunas aplicado aqui) ===== */
 .cards {
@@ -71,11 +82,13 @@ header nav ul li a:hover {
     max-width: 1000px; /* Limita a largura do container */
 }
 
+
 .cards .card {
     text-align: center;
     /* Define o tamanho base para 4 cards caberem na linha de 1000px */
-    flex-basis: 230px; 
+    flex-basis: 230px;
 }
+
 
 .cards .card p {
     margin-bottom: 8px;
@@ -85,15 +98,17 @@ header nav ul li a:hover {
     text-align: left; /* Mantido para justificar o texto abaixo da imagem */
 }
 
+
 /* Estilo para o texto acima das imagens de planos (Para estudantes, Treino por 3 meses, etc.) */
 .cards .card .plano-titulo {
     font-family: 'Times New Roman', serif;
     font-size: 20px;
-    font-weight: normal; 
+    font-weight: normal;
     margin-bottom: 5px;
     color: #222;
     text-align: left; /* Mantido para justificar o texto acima da imagem */
 }
+
 
 .cards .card img {
     width: 100%; /* Ajusta a imagem para preencher o flex-basis (230px) */
@@ -102,9 +117,11 @@ header nav ul li a:hover {
     transition: transform 0.3s;
 }
 
+
 .cards .card img:hover {
     transform: scale(1.05);
 }
+
 
 /* ===== SOBRE SITE ===== */
 .sobre {
@@ -114,17 +131,20 @@ header nav ul li a:hover {
     padding: 20px;
 }
 
+
 .sobre h2 {
     font-size: 28px;
     margin: 20px 0 10px;
     color: #a50000;
 }
 
+
 .sobre p {
     font-size: 18px;
     line-height: 1.6;
     color: #333;
 }
+
 
 /* ===== Foto SITE (Footer) ===== */
 footer {
@@ -136,28 +156,34 @@ footer {
     border-top: 1px solid #ddd;
 }
 
+
 footer .social a img {
     width: 40px;
     margin-right: 15px;
     transition: transform 0.3s;
 }
 
+
 footer .social a img:hover {
     transform: scale(1.2);
 }
+
 
 footer .qr img {
     width: 70px;
 }
 
+
 /* ================================================= */
 /* ESTILOS PARA ÁREA ADMIN (MANTIDOS do seu original) */
 /* ================================================= */
+
 
 .admin-header {
     background-color: #a50000;
     padding: 10px 40px;
 }
+
 
 .admin-header ul {
     list-style: none;
@@ -167,6 +193,7 @@ footer .qr img {
     padding: 0;
 }
 
+
 .admin-header a {
     color: white;
     text-decoration: none;
@@ -174,28 +201,34 @@ footer .qr img {
     font-size: 14px;
 }
 
+
 .admin-header a.active {
     border-bottom: 2px solid yellow;
 }
+
 
 .logout-btn {
     margin-left: auto;
 }
 
+
 .admin-main {
     padding: 20px;
 }
+
 
 .admin-main h2 {
     color: #a50000;
     margin-bottom: 20px;
 }
 
+
 .image-grid {
     display: flex;
     flex-wrap: wrap;
     gap: 20px;
 }
+
 
 .image-item {
     width: 150px;
@@ -208,6 +241,7 @@ footer .qr img {
     font-weight: bold;
 }
 
+
 .login-container {
     width: 300px;
     margin: 100px auto;
@@ -217,10 +251,12 @@ footer .qr img {
     box-shadow: 0 0 10px rgba(0,0,0,0.2);
 }
 
+
 .login-container h2 {
     text-align: center;
     margin-bottom: 20px;
 }
+
 
 .login-container input {
     width: 100%;
@@ -229,6 +265,7 @@ footer .qr img {
     border-radius: 5px;
     border: 1px solid #ccc;
 }
+
 
 .login-container button {
     width: 100%;
@@ -251,12 +288,14 @@ footer .qr img {
     font-weight: bold;
 }
 
+
 /* Grid de imagens */
 .image-grid {
     display: flex;
     flex-wrap: wrap;
     gap: 10px;
 }
+
 
 /* Item da grid */
 .image-item {
@@ -267,6 +306,7 @@ footer .qr img {
     min-width: 120px;
     text-align: center;
 }
+
 
 /* Botão remover */
 .remove-btn {
@@ -286,7 +326,9 @@ footer .qr img {
     padding: 0;
 }
 
+
 /* --- ESTILOS ADICIONAIS PARA SEÇÕES CONSOLIDADAS NA HOME (PLANOS E CONTATO) --- */
+
 
 /* Estilo para Título de todas as novas Seções */
 .section-title, .contato-section h2 {
@@ -297,6 +339,7 @@ footer .qr img {
     margin-bottom: 30px;
 }
 
+
 /* Estilos para a nova seção de Contato na Home */
 .contato-section {
     max-width: 900px;
@@ -306,9 +349,11 @@ footer .qr img {
     border-top: 1px solid #ddd; /* Linha sutil para separar do rodapé ou da seção anterior */
 }
 
+
 .contato-section h2 {
     text-align: center;
 }
+
 
 .contato-section p {
     font-size: 18px;
@@ -317,12 +362,14 @@ footer .qr img {
     margin-bottom: 15px;
 }
 
+
 .contato-info {
-    list-style: none; 
+    list-style: none;
     padding-left: 0;
     font-size: 18px;
     color: #333;
 }
+
 
 .contato-info li {
     margin-bottom: 8px;
