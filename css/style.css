@@ -93,7 +93,7 @@ header nav ul li a:hover {
 .cards .card p {
     margin-bottom: 8px;
     font-size: 16px;
-    font-weight: bold;
+    font-weight: normal;
     color: #222;
     text-align: left; /* Mantido para justificar o texto abaixo da imagem */
 }
@@ -103,7 +103,7 @@ header nav ul li a:hover {
 .cards .card .plano-titulo {
     font-family: 'Times New Roman', serif;
     font-size: 20px;
-    font-weight: normal;
+    font-weight: bold;
     margin-bottom: 5px;
     color: #222;
     text-align: left; /* Mantido para justificar o texto acima da imagem */
