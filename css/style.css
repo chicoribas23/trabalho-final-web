@@ -7,6 +7,11 @@
     font-family: Arial, Helvetica, sans-serif;
 }
 
+/* Adiciona scroll suave para âncoras internas (navegação) */
+html {
+    scroll-behavior: smooth;
+}
+
 /* ===== HEADER SITE ===== */
 header {
     display: flex;
@@ -38,7 +43,7 @@ header nav ul li a:hover {
     color: #ffcc00; /* Destaque no hover */
 }
 
-/* ===== SLOGAN SITE ===== */
+/* ===== SLOGAN SITE (Seção Principal da Home) ===== */
 .slogan {
     text-align: center;
     margin: 40px 0;
@@ -56,18 +61,20 @@ header nav ul li a:hover {
     color: #333;
 }
 
-/* ===== CARDS SITE ===== */
+/* ===== CARDS SITE (Layout de 4 colunas aplicado aqui) ===== */
 .cards {
     display: flex;
-    justify-content: center;
-    gap: 20px;
+    justify-content: flex-start;
+    gap: 20px; /* Espaçamento entre os cards */
     margin: 30px auto;
-    flex-wrap: wrap;
-    max-width: 1000px;
+    flex-wrap: wrap; /* Permite que os cards quebrem a linha */
+    max-width: 1000px; /* Limita a largura do container */
 }
 
 .cards .card {
     text-align: center;
+    /* Define o tamanho base para 4 cards caberem na linha de 1000px */
+    flex-basis: 230px; 
 }
 
 .cards .card p {
@@ -75,10 +82,21 @@ header nav ul li a:hover {
     font-size: 16px;
     font-weight: bold;
     color: #222;
+    text-align: left; /* Mantido para justificar o texto abaixo da imagem */
+}
+
+/* Estilo para o texto acima das imagens de planos (Para estudantes, Treino por 3 meses, etc.) */
+.cards .card .plano-titulo {
+    font-family: 'Times New Roman', serif;
+    font-size: 20px;
+    font-weight: normal; 
+    margin-bottom: 5px;
+    color: #222;
+    text-align: left; /* Mantido para justificar o texto acima da imagem */
 }
 
 .cards .card img {
-    width: 230px;
+    width: 100%; /* Ajusta a imagem para preencher o flex-basis (230px) */
     border-radius: 6px;
     box-shadow: 0px 4px 8px rgba(0,0,0,0.2);
     transition: transform 0.3s;
@@ -108,7 +126,7 @@ header nav ul li a:hover {
     color: #333;
 }
 
-/* ===== Foto SITE ===== */
+/* ===== Foto SITE (Footer) ===== */
 footer {
     display: flex;
     justify-content: space-between;
@@ -132,9 +150,9 @@ footer .qr img {
     width: 70px;
 }
 
-/* ========================= */
-/* ESTILOS PARA ÁREA ADMIN */
-/* ========================= */
+/* ================================================= */
+/* ESTILOS PARA ÁREA ADMIN (MANTIDOS do seu original) */
+/* ================================================= */
 
 .admin-header {
     background-color: #a50000;
@@ -266,4 +284,46 @@ footer .qr img {
     line-height: 18px;
     text-align: center;
     padding: 0;
+}
+
+/* --- ESTILOS ADICIONAIS PARA SEÇÕES CONSOLIDADAS NA HOME (PLANOS E CONTATO) --- */
+
+/* Estilo para Título de todas as novas Seções */
+.section-title, .contato-section h2 {
+    text-align: center;
+    font-size: 30px;
+    color: #a50000;
+    margin-top: 50px; /* Grande espaço acima do título */
+    margin-bottom: 30px;
+}
+
+/* Estilos para a nova seção de Contato na Home */
+.contato-section {
+    max-width: 900px;
+    margin: 40px auto 70px auto; /* Espaço generoso abaixo para separação */
+    text-align: left;
+    padding: 20px;
+    border-top: 1px solid #ddd; /* Linha sutil para separar do rodapé ou da seção anterior */
+}
+
+.contato-section h2 {
+    text-align: center;
+}
+
+.contato-section p {
+    font-size: 18px;
+    line-height: 1.6;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.contato-info {
+    list-style: none; 
+    padding-left: 0;
+    font-size: 18px;
+    color: #333;
+}
+
+.contato-info li {
+    margin-bottom: 8px;
 }
