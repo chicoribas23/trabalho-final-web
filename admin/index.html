@@ -3,29 +3,41 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login Admin</title>
-    <link rel="stylesheet" href="css/style.css">
-
+    <title>Login Administrativo</title>
+    <link rel="stylesheet" href="../css/style.css"> 
 </head>
-<body>
-    <div class="login-container">
-        <h2>Login Administrativo</h2>
+<body class="login-body">
+    
+    <div class="user-icon-container-new">
+        <div class="user-icon-new">
+            <div class="icon-person"></div>
+        </div>
+    </div>
+
+    <div class="login-card">
         
         <form id="login-form">
             
-            <input type="text" id="username" placeholder="usuario" required>
-            <input type="password" id="password" placeholder="senha" required>
-            
-            <button type="submit">Entrar</button>
+            <div class="input-group">
+                <input type="text" id="username" placeholder="User ID" required>
+                <span class="input-icon-user"></span> 
+            </div>
 
-            <p id="error-msg" style="color: red; text-align: center; display: none;">
+            <div class="input-group">
+                <input type="password" id="password" placeholder="Password" required>
+                <span class="input-icon-lock"></span> 
+            </div>
+            
+            <button type="submit">LOGIN</button>
+
+            <p id="error-msg" style="color: #a50000; text-align: center; display: none; margin-top: 15px;">
                 Usuário ou senha incorretos!
             </p>
         </form>
     </div>
 
     <script>
-        // Ouve o evento de "submit" (clicar em "Entrar")
+        // Ouve o evento de "submit" (clicar em "LOGIN")
         document.getElementById('login-form').addEventListener('submit', function(event) {
             
             // Impede o formulário de pular de página sozinho
@@ -37,9 +49,7 @@
             let errorMsg = document.getElementById('error-msg');
 
             // -----------------------------------------------------------
-            // == AQUI VOCÊ RESTRINGE PARA UM ÚNICO USUÁRIO ==
-            // Defina o único usuário e senha que podem entrar
-            
+            // == DADOS DE LOGIN ==
             const USUARIO_CORRETO = 'maria';
             const SENHA_CORRETA = 'julia44';
             // -----------------------------------------------------------
@@ -47,11 +57,9 @@
             // Compara o que foi digitado com o que é correto
             if (user === USUARIO_CORRETO && pass === SENHA_CORRETA) {
                 // Se estiver CORRETO:
-                // 1. Marca o navegador como "logado"
                 sessionStorage.setItem('isLoggedIn', 'true');
-                
-                // 2. Redireciona para a página de planos
-                window.location.href = 'planos1.html'; // O nome da sua página de planos
+                // Redireciona para a página de planos (planos1.html)
+                window.location.href = 'planos1.html'; 
 
             } else {
                 // Se estiver ERRADO:
@@ -61,5 +69,3 @@
     </script>
 </body>
 </html>
-
-

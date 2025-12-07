@@ -242,39 +242,156 @@ footer .qr img {
 }
 
 
+/* ================================================= */
+/* ESTILOS PARA NOVA TELA DE LOGIN (IGUAL À IMAGEM) */
+/* ================================================= */
+
+/* Fundo da página (Cor Cinza Claro, com gradiente suave como na imagem) */
+.login-body {
+    background-color: #f0f0f0; 
+    background-image: linear-gradient(to bottom, #eeeeee, #dddddd);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    margin: 0;
+}
+
+/* Esconde o container de login antigo se ele ainda existir no HTML */
 .login-container {
-    width: 300px;
-    margin: 100px auto;
-    padding: 30px;
+    display: none !important;
+}
+
+/* O Cartão de Login (Bloco Branco) */
+.login-card {
+    width: 380px; /* Tamanho médio */
+    max-width: 90%;
+    padding: 30px 40px;
+    padding-top: 60px; /* Espaço para o ícone de usuário */
+    background-color: white; 
+    border-radius: 20px; /* Cantos bem arredondados */
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    position: relative;
+    z-index: 1;
+    margin: 0 auto;
+}
+
+/* Contêiner para o Ícone de Usuário (posicionado acima e ao centro) */
+.user-icon-container-new {
+    margin-bottom: -35px; /* Puxa o ícone para baixo para sobrepor o cartão */
+    z-index: 2; 
+    display: flex; 
+    justify-content: center;
+}
+
+/* O Círculo Vermelho Principal do Ícone */
+.user-icon-new {
+    width: 80px; /* Tamanho do ícone */
+    height: 80px;
+    background-color: #d6001c; /* Vermelho principal (mais vibrante) */
+    border-radius: 50%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2); /* Sombra para dar profundidade */
+}
+
+/* O Ícone de Pessoa (Feito com CSS para simular o ícone da imagem) */
+.icon-person {
+    position: absolute;
+    /* Cabeça */
+    width: 25px;
+    height: 25px;
     background-color: white;
+    border-radius: 50%;
+    top: 15px;
+    /* Corpo */
+    content: '';
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    background-color: white;
+    border-radius: 0 0 50px 50px;
+    bottom: 5px;
+    clip-path: inset(25px 0 0 0); /* Corta a parte superior */
+}
+
+/* Estilo para agrupar input e ícone dentro do campo */
+.input-group {
+    position: relative;
+    margin-bottom: 25px;
+}
+
+/* Estilo dos campos de input (User ID e Password) */
+.login-card input {
+    width: 100%;
+    padding: 15px 15px;
+    padding-right: 50px; /* Espaço para o ícone */
     border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.2);
-}
-
-
-.login-container h2 {
-    text-align: center;
-    margin-bottom: 20px;
-}
-
-
-.login-container input {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 15px;
-    border-radius: 5px;
     border: 1px solid #ccc;
+    background-color: white;
+    font-size: 16px;
+    color: #333;
+    /* Remove a borda padrão do foco */
+    outline: none;
+    box-shadow: none;
+    transition: border-color 0.3s;
+}
+
+.login-card input:focus {
+    border-color: #d6001c; /* Destaca a borda ao focar */
+}
+
+/* Estilo dos ícones dentro dos campos (feito com CSS puro) */
+.input-group span {
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 20px;
+    height: 20px;
+    background-color: #888; /* Cor Cinza para os ícones */
+    -webkit-mask-size: cover;
+    mask-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+/* Ícone de Pessoa para o campo User ID */
+.input-icon-user {
+    /* Simulação de ícone de pessoa (ajuste se tiver uma fonte de ícones) */
+    -webkit-mask-image: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="none" d="M0 0h24v24H0z"/><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg>');
+    mask-image: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="none" d="M0 0h24v24H0z"/><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg>');
+}
+
+/* Ícone de Cadeado para o campo Password */
+.input-icon-lock {
+    /* Simulação de ícone de cadeado (ajuste se tiver uma fonte de ícones) */
+    -webkit-mask-image: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="none" d="M0 0h24v24H0z"/><path d="M12 17c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm6-9h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zm-6-5c1.66 0 3 1.34 3 3v2H9V6c0-1.66 1.34-3 3-3zm6 7v10H6V10h12z"/></svg>');
+    mask-image: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="none" d="M0 0h24v24H0z"/><path d="M12 17c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm6-9h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zm-6-5c1.66 0 3 1.34 3 3v2H9V6c0-1.66 1.34-3 3-3zm6 7v10H6V10h12z"/></svg>');
 }
 
 
-.login-container button {
+/* Estilo do Botão LOGIN */
+.login-card button {
     width: 100%;
-    padding: 10px;
-    background-color: #a50000;
+    padding: 15px;
+    margin-top: 10px;
+    background-color: #d6001c; /* Vermelho principal */
     color: white;
     border: none;
-    border-radius: 5px;
+    border-radius: 10px;
     cursor: pointer;
+    font-size: 18px;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: background-color 0.2s;
+}
+
+.login-card button:hover {
+    background-color: #a50000; /* Vermelho Vikings no hover */
 }
 /* Botão Adicionar */
 .add-btn {
@@ -374,3 +491,7 @@ footer .qr img {
 .contato-info li {
     margin-bottom: 8px;
 }
+
+
+
+
