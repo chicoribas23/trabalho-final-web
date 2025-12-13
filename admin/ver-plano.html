@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ver/Editar Plano</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@uploadcare/file-uploader@1/web/uc-file-uploader-regular.min.css"
+    />
+    <link rel="stylesheet" href="css/estilo.css" />
+  </head>
+
+  <body>
+    <div id="container">
+      <header>
+        <h3>Front-End API</h3>
+        <nav>
+          <a href="index.html">Home</a>
+          <a href="planos.html">Planos</a>
+          <a href="usuarios.html">Usuários</a>
+        </nav>
+      </header>
+      <hr />
+      <div class="header-corpo">
+        <h3>Ver/Editar Plano</h3>
+      </div>
+      <div class="corpo">
+        <form id="form-plano">
+          <div class="form-group">
+            <label for="id">ID:</label>
+            <input type="text" id="id" name="id" disabled /> 
+          </div>
+          <div class="form-group">
+            <label for="nome">Nome do Plano:</label>
+            <input type="text" id="nome" name="nome" />
+          </div>
+          <div class="form-group">
+            <label for="descricao">Descrição:</label>
+            <textarea name="descricao" id="descricao"></textarea>
+          </div>
+          <div class="form-group">
+            <label for="preco">Preço:</label>
+            <input type="number" id="preco" name="preco" step="0.01" />
+          </div>
+          
+          <div class="form-group">
+            <label for="imagem"
+              >Imagem: <span id="selimg" style="font-weight: lighter"></span
+            ></label>
+
+            <uc-config
+              ctx-name="my-uploader"
+              use-cloud-image-editor="false"
+              source-list="local"
+              files-view-mode="list"
+              grid-show-file-names="true"
+              pubkey="SUA-CHAVE-PUBLICA-UPLOADCARE"
+              multiple="false"
+            ></uc-config>
+
+            <uc-file-uploader-regular
+              ctx-name="my-uploader"
+              class="uc-light"
+            ></uc-file-uploader-regular>
+
+            <uc-upload-ctx-provider
+              ctx-name="my-uploader"
+            ></uc-upload-ctx-provider>
+            <img id="imagem-preview" src="" alt="Imagem do Plano" />
+          </div>
+          
+          <div class="form-actions">
+            <a id="submit" class="botao salvar"> Salvar </a>
+            <a
+              class="botao cancelar"
+              onclick="window.location.href='planos.html'"
+            >
+              Cancelar
+            </a>
+          </div>
+        </form>
+      </div>
+    </div>
+    <script type="module" src="js/verPlano.js"></script>
+  </body>
+</html>
