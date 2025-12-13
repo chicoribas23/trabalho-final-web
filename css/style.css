@@ -1,6 +1,8 @@
 /* SITE  */
 
 
+
+
 * {
     margin: 0;
     padding: 0;
@@ -9,10 +11,14 @@
 }
 
 
+
+
 /* Adiciona scroll suave para âncoras internas (navegação) */
 html {
     scroll-behavior: smooth;
 }
+
+
 
 
 /* ===== HEADER SITE ===== */
@@ -25,9 +31,13 @@ header {
 }
 
 
+
+
 header .logo img {
     height: 70px;
 }
+
+
 
 
 header nav ul {
@@ -35,6 +45,8 @@ header nav ul {
     display: flex;
     gap: 40px;
 }
+
+
 
 
 header nav ul li a {
@@ -46,9 +58,13 @@ header nav ul li a {
 }
 
 
+
+
 header nav ul li a:hover {
     color: #ffcc00; /* Destaque no hover */
 }
+
+
 
 
 /* ===== SLOGAN SITE (Seção Principal da Home) ===== */
@@ -58,6 +74,8 @@ header nav ul li a:hover {
 }
 
 
+
+
 .slogan h1 {
     font-size: 60px;
     font-family: "Arial",cursive;
@@ -65,11 +83,15 @@ header nav ul li a:hover {
 }
 
 
+
+
 .slogan p {
     font-size: 22px;
     font-style: italic;
     color: #333;
 }
+
+
 
 
 /* ===== CARDS SITE (Layout de 4 colunas aplicado aqui) ===== */
@@ -83,11 +105,15 @@ header nav ul li a:hover {
 }
 
 
+
+
 .cards .card {
     text-align: center;
     /* Define o tamanho base para 4 cards caberem na linha de 1000px */
     flex-basis: 230px;
 }
+
+
 
 
 .cards .card p {
@@ -97,6 +123,8 @@ header nav ul li a:hover {
     color: #222;
     text-align: left; /* Mantido para justificar o texto abaixo da imagem */
 }
+
+
 
 
 /* Estilo para o texto acima das imagens de planos (Para estudantes, Treino por 3 meses, etc.) */
@@ -110,6 +138,8 @@ header nav ul li a:hover {
 }
 
 
+
+
 .cards .card img {
     width: 100%; /* Ajusta a imagem para preencher o flex-basis (230px) */
     border-radius: 6px;
@@ -118,9 +148,13 @@ header nav ul li a:hover {
 }
 
 
+
+
 .cards .card img:hover {
     transform: scale(1.05);
 }
+
+
 
 
 /* ===== SOBRE SITE ===== */
@@ -132,6 +166,8 @@ header nav ul li a:hover {
 }
 
 
+
+
 .sobre h2 {
     font-size: 28px;
     margin: 20px 0 10px;
@@ -139,11 +175,15 @@ header nav ul li a:hover {
 }
 
 
+
+
 .sobre p {
     font-size: 18px;
     line-height: 1.6;
     color: #333;
 }
+
+
 
 
 /* ===== Foto SITE (Footer) ===== */
@@ -157,6 +197,8 @@ footer {
 }
 
 
+
+
 footer .social a img {
     width: 40px;
     margin-right: 15px;
@@ -164,9 +206,13 @@ footer .social a img {
 }
 
 
+
+
 footer .social a img:hover {
     transform: scale(1.2);
 }
+
+
 
 
 footer .qr img {
@@ -174,15 +220,21 @@ footer .qr img {
 }
 
 
+
+
 /* ================================================= */
 /* ESTILOS PARA ÁREA ADMIN (MANTIDOS do seu original) */
 /* ================================================= */
+
+
 
 
 .admin-header {
     background-color: #a50000;
     padding: 10px 40px;
 }
+
+
 
 
 .admin-header ul {
@@ -194,6 +246,8 @@ footer .qr img {
 }
 
 
+
+
 .admin-header a {
     color: white;
     text-decoration: none;
@@ -202,9 +256,13 @@ footer .qr img {
 }
 
 
+
+
 .admin-header a.active {
     border-bottom: 2px solid yellow;
 }
+
+
 
 
 .logout-btn {
@@ -212,9 +270,13 @@ footer .qr img {
 }
 
 
+
+
 .admin-main {
     padding: 20px;
 }
+
+
 
 
 .admin-main h2 {
@@ -223,11 +285,15 @@ footer .qr img {
 }
 
 
+
+
 .image-grid {
     display: flex;
     flex-wrap: wrap;
     gap: 20px;
 }
+
+
 
 
 .image-item {
@@ -242,13 +308,16 @@ footer .qr img {
 }
 
 
+
+
 /* ================================================= */
 /* ESTILOS PARA NOVA TELA DE LOGIN (IGUAL À IMAGEM) */
 /* ================================================= */
 
+
 /* Fundo da página (Cor Cinza Claro, com gradiente suave como na imagem) */
 .login-body {
-    background-color: #f0f0f0; 
+    background-color: #f0f0f0;
     background-image: linear-gradient(to bottom, #eeeeee, #dddddd);
     display: flex;
     flex-direction: column;
@@ -258,10 +327,12 @@ footer .qr img {
     margin: 0;
 }
 
+
 /* Esconde o container de login antigo se ele ainda existir no HTML */
 .login-container {
     display: none !important;
 }
+
 
 /* O Cartão de Login (Bloco Branco) */
 .login-card {
@@ -269,7 +340,7 @@ footer .qr img {
     max-width: 90%;
     padding: 30px 40px;
     padding-top: 60px; /* Espaço para o ícone de usuário */
-    background-color: white; 
+    background-color: white;
     border-radius: 20px; /* Cantos bem arredondados */
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
     position: relative;
@@ -277,13 +348,15 @@ footer .qr img {
     margin: 0 auto;
 }
 
+
 /* Contêiner para o Ícone de Usuário (posicionado acima e ao centro) */
 .user-icon-container-new {
     margin-bottom: -35px; /* Puxa o ícone para baixo para sobrepor o cartão */
-    z-index: 2; 
-    display: flex; 
+    z-index: 2;
+    display: flex;
     justify-content: center;
 }
+
 
 /* O Círculo Vermelho Principal do Ícone */
 .user-icon-new {
@@ -297,6 +370,7 @@ footer .qr img {
     justify-content: center;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2); /* Sombra para dar profundidade */
 }
+
 
 /* O Ícone de Pessoa (Feito com CSS para simular o ícone da imagem) */
 .icon-person {
@@ -318,11 +392,13 @@ footer .qr img {
     clip-path: inset(25px 0 0 0); /* Corta a parte superior */
 }
 
+
 /* Estilo para agrupar input e ícone dentro do campo */
 .input-group {
     position: relative;
     margin-bottom: 25px;
 }
+
 
 /* Estilo dos campos de input (User ID e Password) */
 .login-card input {
@@ -340,9 +416,11 @@ footer .qr img {
     transition: border-color 0.3s;
 }
 
+
 .login-card input:focus {
     border-color: #d6001c; /* Destaca a borda ao focar */
 }
+
 
 /* Estilo dos ícones dentro dos campos (feito com CSS puro) */
 .input-group span {
@@ -359,6 +437,7 @@ footer .qr img {
     background-position: center;
 }
 
+
 /* Ícone de Pessoa para o campo User ID */
 .input-icon-user {
     /* Simulação de ícone de pessoa (ajuste se tiver uma fonte de ícones) */
@@ -366,12 +445,15 @@ footer .qr img {
     mask-image: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="none" d="M0 0h24v24H0z"/><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg>');
 }
 
+
 /* Ícone de Cadeado para o campo Password */
 .input-icon-lock {
     /* Simulação de ícone de cadeado (ajuste se tiver uma fonte de ícones) */
     -webkit-mask-image: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="none" d="M0 0h24v24H0z"/><path d="M12 17c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm6-9h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zm-6-5c1.66 0 3 1.34 3 3v2H9V6c0-1.66 1.34-3 3-3zm6 7v10H6V10h12z"/></svg>');
     mask-image: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="none" d="M0 0h24v24H0z"/><path d="M12 17c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm6-9h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zm-6-5c1.66 0 3 1.34 3 3v2H9V6c0-1.66 1.34-3 3-3zm6 7v10H6V10h12z"/></svg>');
 }
+
+
 
 
 /* Estilo do Botão LOGIN */
@@ -390,6 +472,7 @@ footer .qr img {
     transition: background-color 0.2s;
 }
 
+
 .login-card button:hover {
     background-color: #a50000; /* Vermelho Vikings no hover */
 }
@@ -406,12 +489,16 @@ footer .qr img {
 }
 
 
+
+
 /* Grid de imagens */
 .image-grid {
     display: flex;
     flex-wrap: wrap;
     gap: 10px;
 }
+
+
 
 
 /* Item da grid */
@@ -423,6 +510,8 @@ footer .qr img {
     min-width: 120px;
     text-align: center;
 }
+
+
 
 
 /* Botão remover */
@@ -444,7 +533,11 @@ footer .qr img {
 }
 
 
+
+
 /* --- ESTILOS ADICIONAIS PARA SEÇÕES CONSOLIDADAS NA HOME (PLANOS E CONTATO) --- */
+
+
 
 
 /* Estilo para Título de todas as novas Seções */
@@ -457,6 +550,8 @@ footer .qr img {
 }
 
 
+
+
 /* Estilos para a nova seção de Contato na Home */
 .contato-section {
     max-width: 900px;
@@ -467,9 +562,13 @@ footer .qr img {
 }
 
 
+
+
 .contato-section h2 {
     text-align: center;
 }
+
+
 
 
 .contato-section p {
@@ -480,6 +579,8 @@ footer .qr img {
 }
 
 
+
+
 .contato-info {
     list-style: none;
     padding-left: 0;
@@ -488,10 +589,8 @@ footer .qr img {
 }
 
 
+
+
 .contato-info li {
     margin-bottom: 8px;
 }
-
-
-
-
