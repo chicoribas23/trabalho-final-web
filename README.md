@@ -8,6 +8,8 @@ https://github.com/Gilzilene20
 https://github.com/Lipekau)
 ##- Título
 
+Eduardo Elias Teixeira Oliveira;Francisco Ribas Rodrigues;Kaiky Gomes Leal;Gilzilene Orneles de Sales; Kauã dos Santos
+
 Academia Vikings – Transformando Vidas com Saúde e Movimento v
 jj
 Descrição
