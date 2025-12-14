@@ -11,7 +11,7 @@
         alert('Acesso negado. Faça o login primeiro.');
         window.location.href = 'index.html'; 
     }
-    pubkey="751f3a83fb1a3007b1f5" 
+    // Chave pública do Uploadcare (necessária para o componente HTML)
     </script>
 </head>
 <body>
@@ -29,7 +29,8 @@
         </div>
         
         <div class="corpo">
-            <form id="form-editar-plano" enctype="multipart/form-data"> <div class="form-group">
+            <form id="form-editar-plano"> 
+                <div class="form-group">
                     <label for="id">ID:</label>
                     <input type="text" id="id" name="id" disabled style="background-color: #eee;" /> 
                 </div>
@@ -52,14 +53,19 @@
                 <div class="form-group">
                     <label>Imagem Atual:</label>
                     <img id="imagem-preview" src="" alt="Preview da Imagem Atual" style="max-width: 100%; height: auto; display: block; margin-top: 10px; margin-bottom: 15px; border-radius: 4px; border: 1px solid #ccc;">
-                    <input type="hidden" id="imagem_url_atual" name="imagem_url_atual"> 
+                    
+                    <label for="upload-component">Substituir Imagem (Uploadcare):</label>
+                    
+                    <uc-upload-ctx-provider pubkey="751f3a83fb1a3007b1f5" id="upload-component">
+                        <uc-file-uploader-regular />
+                        <p id="selimg" style="font-size: 0.9em; margin-top: 5px; color: green;"></p>
+                    </uc-upload-ctx-provider>
 
-                    <label for="nova_imagem_plano">Substituir Imagem (opcional):</label>
-                    <input type="file" id="nova_imagem_plano" name="nova_imagem_plano" accept="image/*" />
                     <p style="margin-top: 5px; font-size: 12px; color: #777;">Selecione um arquivo acima para substituir a imagem atual.</p>
                 </div>
+                
                 <div class="form-actions">
-                    <button type="submit" class="add-btn"> Atualizar Plano </button>
+                    <button type="submit" class="add-btn" id="submit"> Atualizar Plano </button> 
                     <a class="cancelar" onclick="window.location.href='planos1.html'">
                         Cancelar
                     </a>
@@ -67,6 +73,6 @@
             </form>
         </div>
     </main>
-    <script src="../js/verPlanos.js"></script> 
+    <script src="../js/verPlanos.js" type="module"></script> 
 </body>
 </html>
