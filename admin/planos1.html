@@ -1,35 +1,50 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Painel Admin - Planos</title>
     <link rel="stylesheet" href="../css/style.css"> 
+    <script>
+    // Se o usuário NÃO ESTIVER logado...
+    if (sessionStorage.getItem('isLoggedIn') !== 'true') {
+        alert('Acesso negado. Faça o login primeiro.');
+        window.location.href = 'index.html'; 
+    }
+    </script>
 </head>
 <body>
     <header class="admin-header">
-        </header>
+        <ul>
+            <li><a href="#" class="active">Planos</a></li>
+        
+            <li class="logout-btn"><a href="../index.html">Sair</a></li>
+        </ul>
+    </header>
 
     <main class="admin-main">
         <div class="header-corpo">
             <h2>Dashboard de Planos</h2>
             <a class="add-btn" href="inserir-plano.html">Adicionar Plano</a>
         </div>
-
-        <div class="corpo" style="margin-bottom: 30px; border: 1px dashed #a50000; padding: 15px;">
-            <h4>Teste de Conexão da API (Desenvolvimento)</h4>
-            <button id="botaoAutor" style="margin-top: 10px;">Buscar Informações da API</button>
-            <div id="info" style="margin-top: 10px; font-size: 14px; color: #555;">
-                <span id="autor">Aguardando busca...</span><br>
-                <span id="api"></span><br>
-                <span id="bd"></span><br>
-            </div>
-        </div>
+        
         <div class="corpo">
             <table>
-                </table>
+                <thead>
+                    <tr>
+                        <th style="width: 5px">ID</th>
+                        <th>Nome do Plano</th>
+                        <th>Descrição</th>
+                        <th>Preço</th>
+                        <th style="width: 150px">Ações</th>
+                    </tr>
+                </thead>
+                <tbody id="tabela-planos">
+                    </tbody>
+            </table>
             <p id="mensagem-status"></p>
         </div>
     </main>
-    
-    <script src="../js/main.js"></script>
     <script src="../js/gerenciarPlanos.js"></script> 
 </body>
 </html>
