@@ -1,9 +1,3 @@
-document.addEventListener("DOMContentLoaded", ()=> {
-    const dogMenu = document.querySelector(".dog-menu");
-    const API_URL ="https://back-end-tf-web-i3bt.vercel.app";
-
-
-
 const botaoAutor = document.getElementById('botaoAutor');
 const elAutor = document.getElementById('autor');
 const elApi = document.getElementById('api');
@@ -33,3 +27,4 @@ async function pegarInformacao() {
     console.error("Erro:", error);
     elAutor.innerText = `Erro: ${error}`;
   }
+}

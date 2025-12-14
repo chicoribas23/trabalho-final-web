@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Painel Admin - Inserir Plano</title>
+    <link rel="stylesheet" href="../css/style.css" />
+    <script>
+    // Proteção de Rota
+    if (sessionStorage.getItem('isLoggedIn') !== 'true') {
+        alert('Acesso negado. Faça o login primeiro.');
+        window.location.href = 'index.html'; 
+    }
+    </script>
+</head>
+<body>
+    <header class="admin-header">
+        <ul>
+            <li><a href="planos1.html" class="active">Planos</a></li>
+
+            <li class="logout-btn"><a href="../index.html">Sair</a></li>
+        </ul>
+    </header>
+
+    <main class="admin-main">
+        <div class="header-corpo">
+            <h3>Inserir Novo Plano</h3>
+        </div>
+        
+        <div class="corpo">
+            <form id="form-inserir-plano" enctype="multipart/form-data"> <div class="form-group">
+                    <label for="nome">Nome do Plano:</label>
+                    <input type="text" name="nome" id="nome" required />
+                </div>
+                
+                <div class="form-group">
+                    <label for="descricao">Descrição:</label>
+                    <textarea id="descricao" name="descricao"></textarea>
+                </div>
+                
+                <div class="form-group">
+                    <label for="preco">Preço (R$):</label>
+                    <input type="number" id="preco" name="preco" step="0.01" required />
+                </div>
+
+                <div class="form-group">
+                    <label for="imagem_plano">Selecionar Imagem do Plano:</label>
+                    <input type="file" id="imagem_plano" name="imagem_plano" accept="image/*" required />
+                    <p style="margin-top: 5px; font-size: 12px; color: #777;">A imagem deve ser selecionada no momento da criação.</p>
+                </div>
+                <div class="form-actions">
+                    <button type="submit" class="add-btn"> Salvar Plano </button>
+                    <a class="cancelar" onclick="window.location.href='planos1.html'">
+                        Cancelar
+                    </a>
+                </div>
+            </form>
+        </div>
+    </main>
+    <script src="../js/inserirPlano.js"></script>
+</body>
+</html>
