@@ -6,7 +6,7 @@
     <title>Painel Admin - Planos</title>
     <link rel="stylesheet" href="../css/style.css"> 
     <script>
-    // Se o usuário NÃO ESTIVER logado...
+    // Proteção de Rota
     if (sessionStorage.getItem('isLoggedIn') !== 'true') {
         alert('Acesso negado. Faça o login primeiro.');
         window.location.href = 'index.html'; 
@@ -28,7 +28,22 @@
             <a class="add-btn" href="inserir-plano.html">Adicionar Plano</a>
         </div>
         
+        <div class="corpo" style="margin-bottom: 30px; border: 1px dashed #a50000; padding: 15px; background-color: #fff8f8;">
+            <h4>Teste de Conexão da API (Desenvolvimento)</h4>
+            <button id="botaoAutor" style="margin-top: 10px;" class="btn-buscar">Buscar Informações da API</button>
+            <div id="info" style="margin-top: 10px; font-size: 14px; color: #555;">
+                <span id="autor">Aguardando busca...</span><br>
+                <span id="api"></span><br>
+                <span id="bd"></span><br>
+            </div>
+        </div>
         <div class="corpo">
+            
+            <div class="search-container">
+                <input type="text" id="campo-busca" placeholder="Buscar planos por nome ou descrição...">
+                <button id="botao-buscar" class="btn-buscar">Buscar</button>
+            </div>
+
             <table>
                 <thead>
                     <tr>
@@ -39,13 +54,14 @@
                         <th style="width: 150px">Ações</th>
                     </tr>
                 </thead>
-                <tbody id="tabela-planos">
+                <tbody id="lista-planos">
                     </tbody>
             </table>
             <p id="mensagem-status"></p>
         </div>
     </main>
-    <script src="../js/gerenciarPlanos.js"></script> 
     
+    <script src="../js/main.js"></script> 
+    <script src="../js/gerenciarPlanos.js"></script> 
 </body>
 </html>
