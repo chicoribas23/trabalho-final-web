@@ -1,54 +1,26 @@
 // Arquivo: ../js/verPlanos.js
 
-// ==============================================================================
-// 1. Configuração da API e Obtenção do ID
-// ==============================================================================
-const urlBase = "https://back-end-tf-web-i3bt.vercel.app/";
+// 1. Definição da URL base da API
+// **IMPORTANTE**: Substitua o placeholder pela URL real do seu back-end.
+const urlBase = "https://back-end-tf-web-i3bt.vercel.app"; 
 
+// 2. Obtém o ID do plano da URL (query string)
 const params = new URLSearchParams(window.location.search);
 const id = params.get("id");
 
+// 3. Elementos do Formulário
+const formEditarPlano = document.getElementById("form-editar-plano"); 
 const inputId = document.getElementById("id");
+
 if (inputId) {
     inputId.value = "Carregando...";
 }
 
-// ==============================================================================
-// 2. Integração Uploadcare (NOVO)
-// ==============================================================================
+// =========================================================================
+// FUNÇÃO DE CARREGAMENTO (GET - Carrega os dados para edição)
+// =========================================================================
 
-// Importa o módulo do Uploadcare para gerenciar o upload de arquivos
-// NOTA: Certifique-se que o <script> no HTML tenha type="module"
-import * as UC from "https://cdn.jsdelivr.net/npm/@uploadcare/file-uploader@1/web/uc-file-uploader-regular.min.js";
-
-// Define os componentes do Uploadcare
-UC.defineComponents(UC);
-
-// Seleciona o componente de upload do Uploadcare
-const ctxProvider = document.querySelector("uc-upload-ctx-provider");
-
-var imageUrl = null; // URL da imagem enviada pelo Uploadcare
-
-// Elementos para exibição
-var selimg = document.getElementById("selimg"); 
-const imagemPreview = document.getElementById("imagem-preview"); 
-
-// Listener para o sucesso do upload no Uploadcare
-ctxProvider.addEventListener("common-upload-success", (e) => {
-    e.preventDefault();
-
-    // Atualiza o nome do arquivo selecionado e a URL
-    selimg.textContent = `Novo arquivo: ${e.detail.successEntries[0].name}`;
-    imageUrl = e.detail.successEntries[0].cdnUrl; 
-
-    // Atualiza o preview com a nova URL
-    imagemPreview.src = imageUrl;
-});
-
-// ==============================================================================
-// 3. Função de Carregamento de Dados (GET)
-// ==============================================================================
-
+// Função autoexecutável para buscar os dados do plano pelo ID
 (async () => {
     if (!id) {
         if (inputId) inputId.value = "Erro: ID não encontrado na URL.";
@@ -59,29 +31,37 @@ ctxProvider.addEventListener("common-upload-success", (e) => {
         const endpoint = `/planos/${id}`;
         const urlFinal = urlBase + endpoint;
 
+        // Faz a requisição GET
         const response = await fetch(urlFinal);
 
         if (!response.ok) {
-            throw new Error(`Erro na requisição GET: ${response.status}`);
+            throw new Error(`Erro na requisição: ${response.status}`);
         }
 
-        const data = await response.json();
-        const plano = data[0] || data; 
+        const plano = await response.json(); 
 
-        if (!plano || !plano.id) {
-            if (inputId) inputId.value = `Erro: Plano com ID ${id} não encontrado.`;
-            return;
+        if (!plano || !plano.id_plano) {
+             if (inputId) inputId.value = `Erro: Plano com ID ${id} não encontrado.`;
+             return;
         }
 
-        // Preenche os campos do formulário
-        document.getElementById("id").value = plano.id;
+        // 4. Preenche os campos do formulário
+        document.getElementById("id").value = plano.id_plano;
         document.getElementById("nome").value = plano.nome;
         document.getElementById("descricao").value = plano.descricao;
         document.getElementById("preco").value = plano.preco; 
         
-        // Define a URL da imagem atual para exibição
-        if (imagemPreview) {
-            imagemPreview.src = plano.imagem_url; 
+        // Preenche o campo de URL atual (Hidden) e a pré-visualização
+        const imagemPreview = document.getElementById("imagem-preview");
+        // ATENÇÃO: 'caminho_arquivo_foto_atual' deve ser o ID do input hidden no HTML
+        const imagemUrlAtual = document.getElementById("caminho_arquivo_foto_atual"); 
+        
+        if (imagemPreview && plano.caminho_arquivo_foto) {
+            imagemPreview.src = plano.caminho_arquivo_foto;
+        }
+
+        if (imagemUrlAtual) {
+            imagemUrlAtual.value = plano.caminho_arquivo_foto; // Salva a URL antiga
         }
 
     } catch (error) {
@@ -91,62 +71,71 @@ ctxProvider.addEventListener("common-upload-success", (e) => {
 })();
 
 
-// ==============================================================================
-// 4. Função de Salvar/Atualizar (PUT)
-// ==============================================================================
+// =========================================================================
+// FUNÇÃO DE ATUALIZAÇÃO (PUT - Envia os dados editados)
+// =========================================================================
 
-// Seleciona o botão "Salvar" (submit do formulário)
-const botaoSalvar = document.getElementById("submit");
-botaoSalvar.addEventListener("click", salvarPlano);
+// Adiciona um listener para o evento de SUBMIT do formulário
+if (formEditarPlano) {
+    formEditarPlano.addEventListener("submit", atualizarPlano);
+}
 
-// Função para atualizar as informações do plano
-async function salvarPlano(e) {
-    e.preventDefault(); 
+
+async function atualizarPlano(e) {
+    e.preventDefault(); // Impede o comportamento padrão do submit
 
     if (!id) {
         alert("ID do plano não encontrado para atualização.");
         return;
     }
 
+    // 1. Coleta os dados em FormData
+    const formData = new FormData();
+    
+    // 2. Verifica se o campo de arquivo está preenchido
+    const arquivoImagem = document.getElementById("imagem_plano").files[0];
+    const urlAtual = document.getElementById("caminho_arquivo_foto_atual").value;
+    
+    // 3. Monta o objeto JSON para enviar ao Back-end (PUT)
+    // ATENÇÃO: Seu server.js (Back-end) não está configurado para receber arquivos
+    // via PUT. Por isso, estamos enviando a URL antiga ou a URL da nova imagem
+    // (se o seu Back-end tratar o upload em JSON, o que é incomum).
+    
+    const dados = {
+        nome: document.getElementById("nome").value,
+        descricao: document.getElementById("descricao").value,
+        preco: document.getElementById("preco").value,
+        // Mantém o campo de URL se nenhuma nova imagem foi selecionada
+        caminho_arquivo_foto: arquivoImagem ? "" : urlAtual // Se arquivoImagem existe, o Back-end deve processá-lo
+    };
+    
+    // Se você estiver usando o Uploadcare (que envia URL no campo), você colocaria aqui:
+    // caminho_arquivo_foto: arquivoImagem ? nova_url_do_uploadcare : urlAtual
+
     try {
-        // Coleta os dados do formulário
-        const dados = {
-            nome: document.getElementById("nome").value,
-            descricao: document.getElementById("descricao").value,
-            // Certifique-se que o preço é um número
-            preco: parseFloat(document.getElementById("preco").value), 
-            // Se imageUrl não for null (novo upload), use-o. Senão, use o src da imagem atual.
-            imagem_url: imageUrl || imagemPreview.src, 
-        };
-        
-        // Verifica se o preço é válido antes de enviar
-        if (isNaN(dados.preco)) {
-             throw new Error("O preço informado não é um valor numérico válido.");
-        }
+        const endpoint = `/planos/${id}`;
+        const urlFinal = urlBase + endpoint;
 
-        const endpoint = `/planos/${id}`; 
-        const urlFinal = urlBase + endpoint; 
-
-        // Faz a requisição PUT
+        // Faz a requisição PUT (enviando JSON)
         const response = await fetch(urlFinal, {
             method: "PUT",
             headers: {
-                "Content-Type": "application/json",
+                "Content-Type": "application/json", 
             },
             body: JSON.stringify(dados),
         });
 
         if (!response.ok) {
-            throw new Error("Erro na requisição PUT: " + response.status);
+            const errorData = await response.json();
+            throw new Error(`Erro na requisição: ${response.status}. Detalhe: ${errorData.erro || response.statusText}`);
         }
 
-        alert("Plano alterado com sucesso!");
-        // Redireciona para a página de listagem de planos
+        alert("Plano atualizado com sucesso!");
+        // Redireciona para a lista
         window.location.href = "planos1.html"; 
 
     } catch (error) {
-        console.error("Erro ao alterar plano:", error);
-        alert("Plano não alterado: " + error.message);
-        // Não redireciona, permite que o usuário tente corrigir
+        console.error("Erro ao atualizar plano:", error);
+        alert(`Plano não atualizado. Detalhe: ${error.message}`);
     }
 }
