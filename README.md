@@ -8,7 +8,7 @@ https://github.com/Gilzilene20
 https://github.com/Lipekau)
 ##- Título
 
-Eduardo Elias Teixeira Oliveira;Francisco Ribas Rodrigues;Kaiky Gomes Leal;Gilzilene Orneles de Sales; Kauã dos Santos
+
 
 Academia Vikings – Transformando Vidas com Saúde e Movimento v
 jj
@@ -51,9 +51,10 @@ obs:Arthur eu tentei de todas as meneiras  exporta o link das imagens do br mode
 Proposta de sites
 
 Apresentação de propostas
+
  # Proposta 01
 
-## FitLife - Guia de aparelhos para Treinos e informaçoes sobre a academia
+ ## FitLife - Guia de aparelhos para Treinos e informaçoes sobre a academia
 
 ### Descrição
 Um site interativo de academia que apresenta diversos tipos de aparelhos de treinos, separando-os conforme os grupos musculares trabalhados (ex.: peito, costas, pernas). Além disso, oferece orientações sobre a academia, dicas de alongamento e rotina semanal recomendada.
